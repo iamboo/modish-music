@@ -1,0 +1,65 @@
+<ng-template #songDate let-date="date">
+  <small class="song-month">{{ date | date: 'MMM' }}</small>
+  <b class="song-day">{{ date | date: 'd' }}</b>
+</ng-template>
+
+<div class="calendar-row">
+  <div class="calendar-col">
+    <div class="list-header">
+      <h2>Song List</h2>
+      <mat-chip-list #chipList>
+        <mat-chip
+          (removed)="displayDate = null; dateFilter = ''"
+          *ngIf="displayDate"
+        >
+          {{ displayDate | date: 'mediumDate' }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+      </mat-chip-list>
+      <button
+        mat-mini-fab
+        color="accent"
+        aria-label="Add song"
+        *ngIf="displayDate"
+        (click)="modifySong(null)"
+      >
+        <span class="fa fa-plus fa-2x"></span>
+      </button>
+    </div>
+    <mat-list *ngIf="hasSongs || !dateFilter">
+      <mat-list-item
+        *ngFor="let song of songs | filter: ['release_date']:dateFilter"
+        (click)="modifySong(song)"
+      >
+        <div class="song-name">
+          {{ song.title }}
+          <small class="song-artist">Album: {{ song.album }}</small>
+          <small class="song-artist"
+            >Artist: {{ song.artist | textList }}</small
+          >
+        </div>
+        <div class="song-date">
+          <ng-container
+            *ngTemplateOutlet="songDate; context: { date: song.release_date }"
+          ></ng-container>
+        </div>
+        <button (click)="deleteSong($event, song)">
+          <span class="fa fa-times fa-2x"></span>
+        </button>
+      </mat-list-item>
+    </mat-list>
+    <div class="no-release" *ngIf="!hasSongs && dateFilter">
+      There are no song releases for this date
+    </div>
+  </div>
+  <div class="calendar-col">
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar
+        (selectedChange)="filterSongs($event)"
+        [dateClass]="dateClass"
+      ></mat-calendar>
+    </mat-card>
+  </div>
+</div>

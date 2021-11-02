@@ -1,0 +1,72 @@
+@import '../../../assets/css/mixins';
+
+.calendar-row {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2rem;
+}
+
+.calendar-col {
+	width: calc(50% - 1.5rem);
+}
+
+.song-artist {
+	@include mx-song-artist;
+}
+
+.song-name {
+	flex-grow: 1;
+}
+
+.song-date {
+	text-align: center;
+}
+
+.song-month {
+	color: #999;
+	display: block;
+	font-size: 0.7rem;
+	line-height: 0.75rem;
+	padding: 0 0.25rem;
+	text-transform: uppercase;
+}
+
+.song-day {
+	font-size: 1.2rem;
+	font-weight: 100;
+	line-height: 1.7rem;
+}
+
+mat-list-item {
+	border-top: var(--list-border);
+	cursor: pointer;
+	&:first-child {
+		border-top: none;
+	}
+	&:hover {
+		background-color: #fcf2d6;
+	}
+}
+
+.mat-list-base .mat-list-item {
+	height: auto;
+	padding: 0.5rem 0;
+}
+
+h2 {
+	padding-right: 1rem;
+}
+
+.list-header {
+	display: flex;
+}
+
+.mat-chip-list {
+	flex-grow: 1;
+}
+
+.no-release {
+	color: #aaa;
+	margin-top: 3rem;
+	text-align: center;
+}

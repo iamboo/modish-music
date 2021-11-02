@@ -1,0 +1,21 @@
+<mat-toolbar class="mat-primary mat-elevation-z4">
+  <mat-toolbar-row>
+    <span class="logo"></span>
+    <span class="flex-spacer"></span>
+    <ng-container *ngIf="authenticated">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="My Account">
+        <span class="fa fa-user-circle fa-2x"></span>
+      </button>
+      <mat-menu #menu="matMenu" [xPosition]="'before'">
+        <button mat-menu-item (click)="signOut()">
+          <span>Sign Out</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="page-format">
+  <app-login-form *ngIf="!authenticated"></app-login-form>
+  <app-calendar *ngIf="authenticated"></app-calendar>
+</div>

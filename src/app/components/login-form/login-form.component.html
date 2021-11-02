@@ -1,0 +1,16 @@
+<mat-card class="mat-elevation-z0">
+  <mat-card-title>Please sign in.</mat-card-title>
+  <mat-card-content>
+    <form autocomplete="off" (submit)="login($event)" [formGroup]="signInFormGroup">
+      <mat-form-field class="mat-secondary" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" autocomplete="off" autofilled="false" formControlName="emailControl" required="true" matInput />
+      </mat-form-field>
+      <mat-form-field class="mat-secondary" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" autocomplete="off" autofilled="false" formControlName="passwordControl" required="true" matInput />
+      </mat-form-field>
+      <button mat-raised-button color="primary">Sign In</button>
+    </form>
+  </mat-card-content>
+</mat-card>

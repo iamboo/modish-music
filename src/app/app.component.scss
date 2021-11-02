@@ -1,0 +1,21 @@
+.page-format,
+mat-toolbar-row {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.logo {
+	background-image: url(./../assets/images/modish_music.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	height: 100%;
+	margin-left: 2rem;
+	transform: rotate(2.5deg);
+	width: 250px;
+}
+
+.flex-spacer {
+	flex-grow: 1;
+}

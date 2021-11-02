@@ -1,0 +1,24 @@
+$form-width: 300px;
+$form-font-size: 1.2rem;
+
+mat-card {
+	margin: 2rem 0;
+}
+
+mat-form-field {
+	display: block;
+	font-size: $form-font-size;
+	margin-top: 1rem;
+	max-width: $form-width;
+}
+
+.mat-card-title {
+	margin-bottom: 2rem;
+}
+
+.mat-raised-button {
+	display: block;
+	font-size: $form-font-size;
+	height: 3rem;
+	width: $form-width;
+}

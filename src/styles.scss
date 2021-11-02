@@ -1,0 +1,19 @@
+@import './assets/css/overrides';
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+input:focus {
+	outline: 0 !important;
+}
+
+:root {
+	--list-border: 1px solid #ddd;
+	--color-amber: #ffe082;
+}
