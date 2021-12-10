@@ -45,6 +45,12 @@ mat-list-item {
 	}
 	&:hover {
 		background-color: #fcf2d6;
+		.delete-button {
+			color: rgba(0, 0, 0, 0.2);
+			&:hover {
+				color: #f44336;
+			}
+		}
 	}
 }
 
@@ -69,4 +75,20 @@ h2 {
 	color: #aaa;
 	margin-top: 3rem;
 	text-align: center;
+}
+
+.delete-button {
+	color: rgba(0, 0, 0, 0.05);
+	height: 2rem;
+	line-height: 20px;
+	margin-left: 0.5rem;
+	min-width: unset;
+	padding: 0;
+	width: 2rem;
+}
+
+.confirm-delete {
+	.mat-menu-content {
+		padding: 0.5rem;
+	}
 }
